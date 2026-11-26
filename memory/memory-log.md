@@ -1,27 +1,28 @@
 # **Daily Brief Memory Log（去重与状态基准）**
 
-最后更新：2026-11-26 11:35 SGT
+最后更新：2026-11-26 20:00 SGT
 
 ## **一、重大项目与长期追踪当前状态基线（防过时误报）**
 
 * **新加坡重大工程**：大士港（Tuas Port）二期已于 2026-11-20 正式动工（填海近 400 公顷，首批泊位预计 2028 年运作）；TEL5 与 DTL3e（勿洛南、双溪勿洛及锡林 3 站）将于 2026-12-26 通车，LTA 将自 12-17 起至 2032 年分阶段翻新 NSEWL/NEL 共 290 部及 CCL 237 部扶梯。
-* **新加坡社区（榜鹅）**：6 层高榜鹅 ActiveSG 体育中心（11 Sentul Crescent）已于 2026-11-22 正式开幕；康福德高（ComfortDelGro）在榜鹅路口的自动驾驶测试因 11 月初险情暂停掉头测试。
-* **新加坡武装部队（SAF）**：防长陈振声 11-25 访日后，新日同意将 Exercise Singapan 双边海军演习常态化并探讨潜艇救援演习。
-* **SpaceX Starship**：Flight 15 已于 2026-11-13 发射、11-14 完成 Ship 42 首次轨道级塔架捕获（Booster 22 取消捕获并于墨西哥湾销毁，Ship 42 可能退役作公开展示而非复飞）；当前现役构型为 Block 3（V3，搭载 Raptor 3 发动机），Block 4 研发中；拟用于 Flight 17 的 Booster 24 与 Ship 44 在完成 Massey's 低温压力测试后已于 11-24 沿 Massey Way 完成双箭同步转运（Double Roll）；佛州 LC-39A 接近完工并进入验收测试阶段，Flight 16（拟 12 月窗口）或仍从 Starbase 发射，佛州 LC-39A 首秀可能落在 Flight 16 或顺延至 Flight 17。
-* **SpaceX Falcon 9**：NROL-136（B1097 第 14 飞）已于 2026-11-22 20:23 SGT 从范登堡 SLC-4E 发射并完成第 680 次回收，刷新 32 小时 3 分 21 秒发射台周转纪录；USSF-266 已于 2026-11-24 23:08 SGT 从范登堡 SLC-4E 成功发射，一级火箭 B1081 完成第 29 次飞行及无人机船回收；后续排期包括 11-28 USSF-380、11-29 Cygnus NG-25。
-* **全球航天（排除 SpaceX）**：ULA 火神（Vulcan）火箭 11-15 失利损毁 40 颗 Amazon Leo 卫星后，初步调查指向箭体对 BE-4 发动机的推进剂供应不足而非发动机自身故障；Rocket Lab 完成第 100 次 Electron 发射后，正筹备 11-27 前后从新西兰发射 Synspective 合成孔径雷达卫星任务（StriX Launch 14 "Night Owls Never Sleep"）；神舟二十四号于 11-24/25 搭载首位巴基斯坦籍国际航天员进驻天宫空间站；进步 MS-36（97P）于 11-24 升空补给国际空间站。
-* **小嶋阳菜与 Her lip to**：小嶋阳菜已于 2026-11-07 宣布结婚与第一胎出生，11-14 起晒出表参道快闪活动穿搭；Her lip to「HOLIDAY 2026」先行发售会定于 11-28 至 12-02（东京 House of Herme）及 12-04 至 12-09（大阪）；副线 ROSIER 已于 11-24 发布「NUDE PEARL」香氛内衣手洗液；母公司 yutori 已于 2026 年 4 月完成对 heart relation 全资子公司化。
-* **金州勇士队**：2026-11-22 美西主场 88–87 险胜凯尔特人（战绩 9 胜 8 负，库里因腹斜肌撕裂缺阵）；美西时间 11-25（新加坡时间 11-26 上午）已在旧金山大通中心与萨克拉门托国王进行 NBA 杯小组赛交锋（11-26 11:35 SGT 测试时点：GS 35–18 SAC，第 1 节剩 2:43，尚未终场，晚报以终场 Box Score 复盘）。
+* **新加坡社区（榜鹅）**：6 层高榜鹅 ActiveSG 体育中心（11 Sentul Crescent）已于 2026-11-22 正式开幕；榜鹅数码区（PDD）开放数码平台（ODP）11-26 官宣首次向私营楼宇 One Comcentre 复制推广；康福德高（ComfortDelGro）在榜鹅路口的自动驾驶测试因 11 月初险情暂停掉头测试。
+* **新加坡武装部队（SAF）**：防长陈振声 11-25 访日后，新日同意将 Exercise Singapan 双边海军演习常态化并探讨潜艇救援演习；新印陆军第 38 届 Exercise Safkar Indopura（11-20 至 11-26）于印尼西加哇圆满闭幕。
+* **SpaceX Starship**：Flight 15 已于 2026-11-13 发射、11-14 完成 Ship 42 首次轨道级塔架捕获（Booster 22 取消捕获并于墨西哥湾销毁，Ship 42 拟退役作公开展示）；当前现役构型为 Block 3（V3，搭载 Raptor 3 发动机），Block 4 研发中；拟用于 Flight 17 的 Booster 24 与 Ship 44 在完成 Massey's 低温压力测试后已于 11-24 完成双箭同步回运，11-25 23:59 至 11-26 04:00 CT 博卡奇卡短时封路已结束，未来 7 天（至 12-02）暂未张贴新封路；Flight 16（拟 12 月窗口，外界关注是否启用接近完工的佛州 LC-39A 首秀，尚未官宣）仍待定档。
+* **SpaceX Falcon 9**：NROL-136（B1097 第 14 飞）已于 2026-11-22 20:23 SGT 从范登堡 SLC-4E 发射并完成第 680 次回收；USSF-266 已于 2026-11-24 23:08 SGT 从范登堡 SLC-4E 发射，B1081 完成第 29 飞回收；后续排期为 11-28 USSF-380、11-29 Cygnus NG-25。
+* **全球航天（排除 SpaceX）**：ULA 火神（Vulcan）11-15 失利损毁 40 颗 Amazon Leo 卫星后初步调查指向箭体推进剂供应不足；Rocket Lab 完成第 100 次 Electron 发射后，第 101 次任务 StriX-14（"Night Owls Never Sleep"）瞄准 11-27 UTC 从新西兰发射；神舟二十四号于 11-24/25 搭载首位巴基斯坦籍国际航天员进驻天宫空间站；进步 MS-36（97P）于 11-24 升空，计划 11-26 20:11 SGT（12:11 UTC）自主对接国际空间站黎明号（Rassvet）节点舱。
+* **小嶋阳菜与 Her lip to**：小嶋阳菜已于 2026-11-07 宣布结婚与第一胎出生；Her lip to「HOLIDAY 2026」先行发售会定于 11-28 至 12-02（东京 House of Herme）及 12-04 至 12-09（大阪）；副线 ROSIER 已于 11-24 发布「NUDE PEARL」香氛内衣手洗液；母公司 yutori 已于 2026 年 4 月完成对 heart relation 全资子公司化。
+* **金州勇士队**：2026-11-25（SGT 11-26 上午）NBA 杯主场 129–110 击败国王（两连胜，战绩 10 胜 8 负，主场 8–1，NBA 杯 2–1）；库里（右腹斜肌撕裂连续第 6 场休战，美西周五复查）、巴特勒（ACL 康复）、波尔津吉斯（生病）、穆迪（膝伤）缺阵；梅尔顿 24 分（三分 12 中 8）、桑托斯替补 22 分、伦德伯格带病首发 15 分 8 篮板 3 抢断；下一战 11-28 10:30 SGT 客战开拓者。
 
 ## **二、近期已播报新闻记录（保留最近两期去重记录，后续简报跳过重复）**
 
-### **2026-11-26 晚报测试窗口（11-26 08:00 – 11:35 SGT）**
+### **2026-11-26 晚报窗口（2026-11-26 08:00 – 20:00 SGT；勇士：11-25 20:00 – 11-26 20:00 SGT）**
 
-* 本地重要新闻：美国拟对新加坡商品加征最高 20% 关税（CNA Now 快讯）；新电信与政府科技局签署备忘录，将榜鹅数码区开放数码平台推广至 One Comcentre 等项目；CNA 报道囤积症清理耗时长。
-* 重大工程跟踪、军队动态跟踪：暂无新增动态。
-* SpaceX动态跟踪：暂无新增动态。
-* 全球航天动态（排除SpaceX）：进步 MS-36（97P）货运飞船预计 11-26 抵达国际空间站。
-* 金州勇士动态：GS 对 SAC 进行中（第 1 节 35–18），终场数据待晚报。
+* 本地重要新闻：【榜鹅】新电信与 GovTech 签署备忘录将榜鹅数码区开放数码平台（ODP）首次引入私营项目 One Comcentre（[The Straits Times](https://www.straitstimes.com/tech/govtech-jtc-system-to-enable-secure-robot-operations-at-revamped-singtel-comcentre?ai-allowed=1)，[Singtel](https://www.singtel.com/about-us/media-centre/news-releases/singtel-and-govtech-singapore-partner-to-advance-ai-enabled-smart-buildings-with-the-open-digital-platform)）；美国 USTR 拟对新加坡商品加征最高 20% 关税并点名 CPF，MTI 表态“非常失望”且副总理颜金勇傍晚回应驳斥压抑消费指控（[CNA MTI](https://www.channelnewsasia.com/singapore/singapore-us-tariffs-meti-trump-6583911)，[CNA Gan](https://www.channelnewsasia.com/singapore/us-singapore-trump-tariffs-cpf-scheme-dpm-gan-6584361)）；MSF 推出整合 9 项计划的“单一家庭服务”（One Family Service），2029 年起分阶段落实（[CNA](https://www.channelnewsasia.com/singapore/one-family-service-coordinated-support-social-services-msf-6584151)）；2026 年全球法治大会闭幕，尚穆根与大法官强调三权互敬不越界（[CNA](https://www.channelnewsasia.com/singapore/government-parliament-judiciary-respect-no-overreach-shanmugam-6584481)，[MHA](https://www.mha.gov.sg/media-room/newsroom/global-rule-of-law-conference-2026/)）；FIDReC 年报披露 2025/26 财年欺诈与诈骗索赔达 1,515 宗（同比 +18%）连续三年居首（[Singapore Law Watch](https://www.singaporelawwatch.sg/Headlines/fraud-scam-claims-against-spore-financial-firms-rise-for-third-year)）。
+* 重大工程跟踪：暂无新增动态。
+* 军队动态跟踪：新印陆军结束第 38 届 Exercise Safkar Indopura（11-20 至 11-26，西加哇班贾尔）（[MINDEF](https://www.mindef.gov.sg/news-and-events/latest-releases/26nov26-nr/)）；SAF 发布 11-30 至 12-07 实弹射击与军演通告（[MINDEF](https://www.mindef.gov.sg/news-and-events/events-and-advisories/26nov26-activity/)）。
+* SpaceX动态跟踪：Starbase 11-25 23:59–11-26 04:00 CT 封路结束，未来 7 天暂未贴新封路（[Starbase Events](https://www.starbaseevents.com/road-closures)）；FCC 批准“Starmind”100 万颗轨道 AI 卫星部署节点细节披露（2033 年首星、2038 年 50%、2040 年完成）（[Spaceflight Now](https://spaceflightnow.com/2026/11/26/fcc-green-lights-spacexs-plan-to-launch-1-million-starmind-data-center-satellites/)）；路易斯安那州居民就 Starbase Louisiana 275 亿美元税务激励及土地协议提起公开会议法诉讼（[The Guardian](https://www.theguardian.com/us-news/2026/nov/26/louisiana-spacex-exxonmobil-land-deal-lawsuit)）；SpaceX 与马斯克向美国“特朗普账户”合计赠股约 180 亿美元（[The Guardian](https://www.theguardian.com/technology/2026/nov/26/elon-musk-pledges-to-give-two-spacex-shares-to-every-child-in-the-us)）。
+* 全球航天动态（排除SpaceX）：进步 MS-36（97P）今日进入最终交会，预定 20:11 SGT（12:11 UTC）对接国际空间站黎明号并采用转位避开星辰号漏气隧道新构型（[SpacePolicyOnline](https://spacepolicyonline.com/events/progress-ms-36-docks-at-the-iss-nov-26-2026-earth-orbit-711-am-et/)，[Space.com](https://www.space.com/space-exploration/international-space-station/russia-progress-97-cargo-launch-international-space-station)，[RussianSpaceWeb](https://www.russianspaceweb.com/progress-ms-36.html)）；Rocket Lab Electron 第 101 飞 StriX-14（"Night Owls Never Sleep"）瞄准 11-27 UTC 发射（[RocketLaunch.live](https://www.rocketlaunch.live/launch/strix-14)）。
+* 金州勇士动态：GSW 129–110 胜 SAC（首节 44–19，梅尔顿 24 分/8 三分，桑托斯 22 分，伦德伯格带病首发 15 分 8 板 3 断，格林 11 助，替补 61 分，库里缺阵周五复查，波尔津吉斯/巴特勒到期合同交易前瞻）（[ESPN](https://www.espn.com/nba/boxscore/_/gameId/401909324)，[CBS Sports](https://www.cbssports.com/nba/gametracker/recap/NBA_20261125_SAC@GS/)）。
 
 ### **2026-11-26 早报窗口（2026-11-25 20:00 – 11-26 10:42 SGT）**
 

@@ -115,12 +115,24 @@ h1 {
   font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
 }
 
+.weather-head {
+  border-top: 1px solid var(--hair);
+  padding-top: 16px;
+}
+
+.weather-kicker {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+
 .weather-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-  border-top: 1px solid var(--hair);
-  padding-top: 18px;
 }
 
 .metric-label {
@@ -296,30 +308,33 @@ tr.totals td {
 
   <header class="hero">
     <h1>新加坡早间新闻与专题简报 · 2026年11月26日</h1>
-    <p class="deck">信息窗口：2026年11月25日 20:00 – 11月26日 10:30 SGT · 生成时间：10:30 SGT</p>
-    <div class="weather-strip">
-      <div>
-        <div class="metric-label">天气状况（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a>）</div>
-        <div class="metric-val">午后雷阵雨</div>
-      </div>
-      <div>
-        <div class="metric-label">气温</div>
-        <div class="metric-val">23.0 – 32.0 °C</div>
-      </div>
-      <div>
-        <div class="metric-label">24小时 PSI</div>
-        <div class="metric-val">28 – 52</div>
-      </div>
-      <div>
-        <div class="metric-label">1小时 PM2.5</div>
-        <div class="metric-val">3 – 15 µg/m³</div>
+    <p class="deck">信息窗口：2026年11月25日 20:00 – 11月26日 10:42 SGT · 生成时间：10:42 SGT</p>
+    <div class="weather-head">
+      <div class="weather-kicker">气象状况 · 新加坡（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a> / <a href="https://www.haze.sg/" target="_blank" rel="noopener noreferrer">Haze.sg</a>）</div>
+      <div class="weather-strip">
+        <div>
+          <div class="metric-label">今日天气</div>
+          <div class="metric-val">午后雷阵雨</div>
+        </div>
+        <div>
+          <div class="metric-label">气温</div>
+          <div class="metric-val">23.0 – 32.0 °C</div>
+        </div>
+        <div>
+          <div class="metric-label">24小时 PSI</div>
+          <div class="metric-val">28 – 52</div>
+        </div>
+        <div>
+          <div class="metric-label">1小时 PM2.5</div>
+          <div class="metric-val">3 – 15 µg/m³</div>
+        </div>
       </div>
     </div>
   </header>
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>新加坡本地新闻与政治动向</h2>
+      <h2>本地重要新闻</h2>
     </div>
     <div class="col-right">
       <ul>
@@ -334,25 +349,47 @@ tr.totals td {
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>重大工程与武装部队动态</h2>
+      <h2>重大工程跟踪</h2>
     </div>
     <div class="col-right">
       <ul>
-        <li><strong>暂无新增动态：</strong>2026年11月25日 20:00 至 11月26日 10:30 SGT 期间，新加坡本地地铁（MRT/LRT）、南北交通廊道（NSC）、巴士车队、巴耶利峇空军基地（PLAB）、长岛计划、南部濒水区、大士港及新加坡武装部队（SAF）装备采购暂无新增官方发布。</li>
+        <li><strong>暂无新增动态：</strong>2026年11月25日 20:00 至 11月26日 10:42 SGT 期间，新加坡本地地铁（MRT/LRT）、南北交通廊道（NSC）、巴士车队更新、巴耶利峇空军基地（PLAB）迁移、长岛计划、南部濒水区及大士港建设暂无新增官方发布。</li>
       </ul>
     </div>
   </section>
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>SpaceX 与 Starship 技术动态</h2>
+      <h2>军队动态跟踪</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>暂无新增动态：</strong>2026年11月25日 20:00 至 11月26日 10:42 SGT 期间，新加坡武装部队（SAF）陆军装甲车与枪械、海军军舰、空军战机等装备采购、列装与演训暂无新增官方通报。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>SpaceX动态跟踪</h2>
     </div>
     <div class="col-right">
       <ul>
         <li><strong>FCC 批准 SpaceX 部署 100 万颗“Starmind”轨道 AI 数据中心卫星：</strong>美国联邦通信委员会（FCC）于 11 月 25 日宣布有条件批准 SpaceX 部署多达 100 万颗 Starmind 轨道 AI 计算卫星，SpaceX 计划自 2027 年第三季度起依托完全可重复使用的 Starship 重型运力发射首批卫星，FCC 主席 Brendan Carr 称此举为美国轨道计算基础设施开辟了新前沿。（<a href="https://www.space.com/space-exploration/launches-spacecraft/green-light-for-starmind-spacex-gets-approval-to-deploy-1-million-ai-satellites" target="_blank" rel="noopener noreferrer">Space.com</a>）</li>
         <li><strong>Starbase 海滩与公路封锁生效在即，推进新一代 Starship 测试准备：</strong>德州 Starbase 市公布自当地时间 11 月 25 日 23:59（新加坡时间 11 月 26 日 13:59）起对 Boca Chica 海滩及 4 号州际公路实施临时封锁；此前拟用于 Flight 17 的 Block 3 构型箭体（搭载 Raptor 3 架构）Booster 24 与 Ship 44 在完成 Massey's 测试场液氮低温压力验证后已沿 Massey Way 完成首次双箭同步转运（Double Roll），正配合 12 月发射窗口与佛州 LC-39A 验收节奏推进后续地面测试。<span class="tag-unverified">[未经证实，仅供参考]</span>（<a href="https://www.starbaseevents.com/news" target="_blank" rel="noopener noreferrer">Starbase Events</a>，<a href="https://www.basenor.com/blogs/news/starship-flight-17-pad-39a-debut-and-what-comes-next" target="_blank" rel="noopener noreferrer">BASENOR</a>）</li>
         <li><strong>SpaceX 放弃约 7.38 亿美元美国联邦宽带补贴（BEAD）：</strong>美国国家电信和信息管理局（NTIA）于 11 月 25 日表示，SpaceX 已退出原获批的约 7.38 亿美元 BEAD 联邦宽带补助资金，但仍承诺在零补贴情况下为原中标乡村地区提供 Starlink 服务（须满足下行 100 Mbps / 上行 20 Mbps 速率要求并免除新用户终端硬件费，同时免除了各州财务审计与违约罚款条款）。（<a href="https://www.teslarati.com/spacex-starlink-rejects-fed-subsidy/" target="_blank" rel="noopener noreferrer">Teslarati</a>）</li>
-        <li><strong>EnduroSat 预订两发 New Glenn 专用发射以应对 Falcon 9 拼车退场：</strong>卫星制造商 EnduroSat 于 11 月 25 日宣布与 Blue Origin 签署多发发射协议，预订自 2029 年起的两发 New Glenn（7×2 构型）专用发射任务，在 SpaceX 逐步推进 Falcon 9 退役及拼车服务（Rideshare）收尾之际提前锁定重型运力。（<a href="https://aviationweek.com/space/launch-vehicles-propulsion/endurosat-reserves-two-new-glenn-rockets-future-customers" target="_blank" rel="noopener noreferrer">Aviation Week</a>，<a href="https://markets.businessinsider.com/news/stocks/endurosat-signs-multi-launch-agreement-with-blue-origin-for-dedicated-new-glenn-missions-for-its-customers-1036799281" target="_blank" rel="noopener noreferrer">Business Insider</a>）</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>全球航天动态（排除SpaceX）</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>EnduroSat 与 Blue Origin 签署两发 New Glenn 专用发射合同：</strong>保加利亚卫星制造商 EnduroSat 于 11 月 25 日宣布与蓝色起源（Blue Origin）达成多发发射协议，预订自 2029 年起的两发 New Glenn（7×2 整流罩构型）专用发射任务，为商业与政府客户提前锁定重型运载窗口。（<a href="https://aviationweek.com/space/launch-vehicles-propulsion/endurosat-reserves-two-new-glenn-rockets-future-customers" target="_blank" rel="noopener noreferrer">Aviation Week</a>，<a href="https://markets.businessinsider.com/news/stocks/endurosat-signs-multi-launch-agreement-with-blue-origin-for-dedicated-new-glenn-missions-for-its-customers-1036799281" target="_blank" rel="noopener noreferrer">Business Insider</a>）</li>
+        <li><strong>神舟二十四号搭载首位外籍航天员进入天宫空间站：</strong>神舟二十四号载人飞船搭乘长征二号F火箭从酒泉发射升空，将巴基斯坦前空军飞行员 Muhammad Zeeshan Ali 与两名中国航天员送入轨道，成为首位造访天宫空间站的国际访客及首位进入轨道的巴基斯坦公民。（<a href="https://www.space.com/space-exploration/human-spaceflight/china-shenzhou-24-first-international-astronaut-launch-tiangong-space-station" target="_blank" rel="noopener noreferrer">Space.com</a>）</li>
       </ul>
     </div>
   </section>
@@ -360,8 +397,8 @@ tr.totals td {
   <section class="sec">
     <div class="sec-split" style="margin-bottom: 20px;">
       <div class="col-left">
-        <h2>小嶋阳菜与 Her lip to 动态及舆论追踪</h2>
-        <span class="sec-badge">早报专属 · 每日更新</span>
+        <h2>小嶋阳菜动态</h2>
+        <span class="sec-badge">早报专属 · Her lip to 与风评追踪</span>
       </div>
       <div class="col-right">
         <ul>
@@ -419,6 +456,7 @@ tr.totals td {
       <li>Teslarati — <a href="https://www.teslarati.com/spacex-starlink-rejects-fed-subsidy/" target="_blank" rel="noopener noreferrer">SpaceX rejects $738M fed subsidy, betting on Starlink alone</a></li>
       <li>Aviation Week — <a href="https://aviationweek.com/space/launch-vehicles-propulsion/endurosat-reserves-two-new-glenn-rockets-future-customers" target="_blank" rel="noopener noreferrer">EnduroSat Reserves Two New Glenn Rockets For Future Customers</a></li>
       <li>Business Insider — <a href="https://markets.businessinsider.com/news/stocks/endurosat-signs-multi-launch-agreement-with-blue-origin-for-dedicated-new-glenn-missions-for-its-customers-1036799281" target="_blank" rel="noopener noreferrer">EnduroSat Signs Multi-Launch Agreement with Blue Origin for Dedicated New Glenn Missions</a></li>
+      <li>Space.com — <a href="https://www.space.com/space-exploration/human-spaceflight/china-shenzhou-24-first-international-astronaut-launch-tiangong-space-station" target="_blank" rel="noopener noreferrer">Shenzhou-24 launches Tiangong space station's first international astronaut</a></li>
       <li>PR TIMES — <a href="https://prtimes.jp/main/html/rd/p/000000198.000074953.html" target="_blank" rel="noopener noreferrer">ROSIER by Her lip to「NUDE PEARL」ランジェリーウォッシュ発表</a></li>
       <li>PR TIMES — <a href="https://prtimes.jp/main/html/rd/p/000000006.000192050.html" target="_blank" rel="noopener noreferrer">Beyondge M&amp;A Industry Report Vol.2</a></li>
       <li>@cosme — <a href="https://www.cosme.net/brands/124553/review/" target="_blank" rel="noopener noreferrer">Her lip to BEAUTY 口碑评价汇总</a> / <a href="https://www.cosme.net/brands/124553/review/agg-40/agl-49/" target="_blank" rel="noopener noreferrer">40代用户评价</a></li>

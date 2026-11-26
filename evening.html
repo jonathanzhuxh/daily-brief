@@ -115,12 +115,24 @@ h1 {
   font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
 }
 
+.weather-head {
+  border-top: 1px solid var(--hair);
+  padding-top: 16px;
+}
+
+.weather-kicker {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+
 .weather-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-  border-top: 1px solid var(--hair);
-  padding-top: 18px;
 }
 
 .metric-label {
@@ -308,29 +320,32 @@ tr.totals td {
   <header class="hero">
     <h1>新加坡晚间新闻与专题简报 · 2026年11月25日</h1>
     <p class="deck">信息窗口：2026年11月25日 08:00 – 20:00 SGT · 生成时间：20:01 SGT（今晚 20:00 SGT 将自动更新最新一期）</p>
-    <div class="weather-strip">
-      <div>
-        <div class="metric-label">天气状况（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a>）</div>
-        <div class="metric-val">局部阵雨</div>
-      </div>
-      <div>
-        <div class="metric-label">气温</div>
-        <div class="metric-val">24.0 – 32.0 °C</div>
-      </div>
-      <div>
-        <div class="metric-label">24小时 PSI</div>
-        <div class="metric-val">30 – 50</div>
-      </div>
-      <div>
-        <div class="metric-label">1小时 PM2.5</div>
-        <div class="metric-val">5 – 12 µg/m³</div>
+    <div class="weather-head">
+      <div class="weather-kicker">气象状况 · 新加坡（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a> / <a href="https://www.haze.sg/" target="_blank" rel="noopener noreferrer">Haze.sg</a>）</div>
+      <div class="weather-strip">
+        <div>
+          <div class="metric-label">今日天气</div>
+          <div class="metric-val">局部阵雨</div>
+        </div>
+        <div>
+          <div class="metric-label">气温</div>
+          <div class="metric-val">24.0 – 32.0 °C</div>
+        </div>
+        <div>
+          <div class="metric-label">24小时 PSI</div>
+          <div class="metric-val">30 – 50</div>
+        </div>
+        <div>
+          <div class="metric-label">1小时 PM2.5</div>
+          <div class="metric-val">5 – 12 µg/m³</div>
+        </div>
       </div>
     </div>
   </header>
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>新加坡本地新闻与政治动向</h2>
+      <h2>本地重要新闻</h2>
     </div>
     <div class="col-right">
       <ul>
@@ -344,7 +359,18 @@ tr.totals td {
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>重大工程与武装部队动态</h2>
+      <h2>重大工程跟踪</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>暂无新增动态：</strong>2026年11月25日 08:00 至 20:00 SGT 期间，新加坡 MRT/LRT 线路、南北交通廊道、巴耶利峇空军基地迁移及大士港等重大工程暂无新增官方发布。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>军队动态跟踪</h2>
     </div>
     <div class="col-right">
       <ul>
@@ -355,7 +381,7 @@ tr.totals td {
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>SpaceX 与 Starship 技术动态</h2>
+      <h2>SpaceX动态跟踪</h2>
     </div>
     <div class="col-right">
       <ul>
@@ -364,11 +390,22 @@ tr.totals td {
     </div>
   </section>
 
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>全球航天动态（排除SpaceX）</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>俄罗斯进步 MS-36（97P）货运飞船从拜科努尔发射前往国际空间站：</strong>进步 MS-36 无人货运飞船由联盟-2.1b 火箭发射入轨，携带约 3 吨食品、燃料与补给物资前往国际空间站黎明号（Rassvet）实验舱。（<a href="https://www.nasa.gov/blogs/spacestation/2026/11/24/progress-cargo-craft-counts-down-to-launch-from-kazakhstan/" target="_blank" rel="noopener noreferrer">NASA</a>）</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="sec">
     <div class="sec-split" style="margin-bottom: 20px;">
       <div class="col-left">
-        <h2>金州勇士队最新动态与技战术复盘</h2>
-        <span class="sec-badge">晚报专属 · NBA 追踪</span>
+        <h2>金州勇士动态</h2>
+        <span class="sec-badge">晚报专属 · NBA 赛果与技战术复盘</span>
       </div>
       <div class="col-right">
         <div class="matchup-banner">赛前前瞻基线：GSW（9–8）主场迎战 SAC（2–15）· 今晚 20:00 SGT 晚报将更新完整赛果与球员 Box Score</div>
@@ -436,6 +473,7 @@ tr.totals td {
   <section class="sec">
     <h2>Sources</h2>
     <ol class="sources-list">
+      <li>NASA — <a href="https://www.nasa.gov/blogs/spacestation/2026/11/24/progress-cargo-craft-counts-down-to-launch-from-kazakhstan/" target="_blank" rel="noopener noreferrer">Progress Cargo Craft Launch Update</a></li>
       <li>Daily Brief Memory Log — <a href="https://github.com/jonathanzhuxh/daily-brief/blob/main/memory/memory-log.md" target="_blank" rel="noopener noreferrer">2026-11-25 晚报窗口归档基线</a></li>
     </ol>
   </section>

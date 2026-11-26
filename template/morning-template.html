@@ -115,12 +115,24 @@ h1 {
   font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
 }
 
+.weather-head {
+  border-top: 1px solid var(--hair);
+  padding-top: 16px;
+}
+
+.weather-kicker {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+
 .weather-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-  border-top: 1px solid var(--hair);
-  padding-top: 18px;
 }
 
 .metric-label {
@@ -297,29 +309,32 @@ tr.totals td {
   <header class="hero">
     <h1>{{TITLE}}</h1>
     <p class="deck">{{TIME_WINDOW}}</p>
-    <div class="weather-strip">
-      <div>
-        <div class="metric-label">天气状况（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a>）</div>
-        <div class="metric-val">{{WEATHER_CONDITION}}</div>
-      </div>
-      <div>
-        <div class="metric-label">气温</div>
-        <div class="metric-val">{{TEMP_RANGE}}</div>
-      </div>
-      <div>
-        <div class="metric-label">24小时 PSI</div>
-        <div class="metric-val">{{PSI_RANGE}}</div>
-      </div>
-      <div>
-        <div class="metric-label">1小时 PM2.5</div>
-        <div class="metric-val">{{PM25_RANGE}}</div>
+    <div class="weather-head">
+      <div class="weather-kicker">气象状况 · 新加坡（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a> / <a href="https://www.haze.sg/" target="_blank" rel="noopener noreferrer">Haze.sg</a>）</div>
+      <div class="weather-strip">
+        <div>
+          <div class="metric-label">今日天气</div>
+          <div class="metric-val">{{WEATHER_CONDITION}}</div>
+        </div>
+        <div>
+          <div class="metric-label">气温</div>
+          <div class="metric-val">{{TEMP_RANGE}}</div>
+        </div>
+        <div>
+          <div class="metric-label">24小时 PSI</div>
+          <div class="metric-val">{{PSI_RANGE}}</div>
+        </div>
+        <div>
+          <div class="metric-label">1小时 PM2.5</div>
+          <div class="metric-val">{{PM25_RANGE}}</div>
+        </div>
       </div>
     </div>
   </header>
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>新加坡本地新闻与政治动向</h2>
+      <h2>本地重要新闻</h2>
     </div>
     <div class="col-right">
       <ul>
@@ -330,18 +345,29 @@ tr.totals td {
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>重大工程与武装部队动态</h2>
+      <h2>重大工程跟踪</h2>
     </div>
     <div class="col-right">
       <ul>
-        {{INFRA_SAF_ITEMS}}
+        {{INFRA_ITEMS}}
       </ul>
     </div>
   </section>
 
   <section class="sec sec-split">
     <div class="col-left">
-      <h2>SpaceX 与 Starship 技术动态</h2>
+      <h2>军队动态跟踪</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        {{SAF_ITEMS}}
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>SpaceX动态跟踪</h2>
     </div>
     <div class="col-right">
       <ul>
@@ -350,11 +376,22 @@ tr.totals td {
     </div>
   </section>
 
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>全球航天动态（排除SpaceX）</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        {{GLOBAL_SPACE_ITEMS}}
+      </ul>
+    </div>
+  </section>
+
   <section class="sec">
     <div class="sec-split" style="margin-bottom: 20px;">
       <div class="col-left">
-        <h2>小嶋阳菜与 Her lip to 动态及舆论追踪</h2>
-        <span class="sec-badge">早报专属 · 每日更新</span>
+        <h2>小嶋阳菜动态</h2>
+        <span class="sec-badge">早报专属 · Her lip to 与风评追踪</span>
       </div>
       <div class="col-right">
         <ul>

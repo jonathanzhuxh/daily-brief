@@ -1,0 +1,104 @@
+name: Daily Brief (Cloud Schedule & Pages Deploy)
+
+on:
+  schedule:
+    # 08:02 SGT (00:02 UTC) — Morning Brief
+    - cron: '2 0 * * *'
+    # 20:02 SGT (12:02 UTC) — Evening Brief
+    - cron: '2 12 * * *'
+  workflow_dispatch:
+    inputs:
+      edition:
+        description: '选择生成的简报版本（auto 按当前新加坡时间自动判断早/晚报）'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - morning
+          - evening
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-brief-pipeline
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate Brief via Gemini API
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate brief & update memory log
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-4-argon' }}
+        run: python scripts/generate_brief.py --edition "${{ inputs.edition || 'auto' }}"
+
+      - name: Commit and push updated brief
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add morning.html evening.html index.html memory/memory-log.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            SGT_STAMP=$(TZ=Asia/Singapore date +'%Y-%m-%d %H:%M SGT')
+            git commit -m "chore(brief): auto-update daily brief (${SGT_STAMP})"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: [generate]
+    if: always() && (github.event_name == 'push' || needs.generate.result == 'success')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Stage static site files
+        run: |
+          mkdir -p _site
+          cp index.html morning.html evening.html .nojekyll _site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

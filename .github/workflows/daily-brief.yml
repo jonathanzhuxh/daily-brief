@@ -35,7 +35,7 @@ jobs:
     name: Generate Brief via Gemini API
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -54,9 +54,10 @@ jobs:
 
       - name: Generate brief & update memory log
         env:
+          PYTHONUNBUFFERED: '1'
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-4-argon' }}
-        run: python scripts/generate_brief.py --edition "${{ inputs.edition || 'auto' }}"
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-4-hydrogen' }}
+        run: python -u scripts/generate_brief.py --edition "${{ inputs.edition || 'auto' }}"
 
       - name: Commit and push updated brief
         run: |

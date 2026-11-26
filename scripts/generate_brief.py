@@ -120,7 +120,7 @@ def resolve_redirect_url(url: str, cache: dict[str, str]) -> str:
                 method=method,
                 headers={"User-Agent": "Mozilla/5.0 (compatible; DailyBriefBot/1.0)"},
             )
-            with urllib.request.urlopen(req, timeout=10) as resp:
+            with urllib.request.urlopen(req, timeout=8) as resp:
                 final_url = resp.geturl()
                 if final_url and "grounding-api-redirect" not in final_url:
                     resolved = final_url
@@ -298,34 +298,51 @@ def render_evening_html(
     return out
 
 
-def call_gemini_with_retry(
+def run_background_interaction(
     client: genai.Client, model: str, prompt: str, schema: dict
 ) -> str:
-    last_err: Exception | None = None
-    for attempt in range(1, 4):
+    start_ts = time.monotonic()
+    interaction = client.interactions.create(
+        model=model,
+        input=prompt,
+        background=True,
+        tools=[{"type": "google_search"}],
+        generation_config={"thinking_level": "medium"},
+        response_format={
+            "type": "text",
+            "mime_type": "application/json",
+            "schema": schema,
+        },
+    )
+    interaction_id = interaction.id
+    print(f"Started background interaction: {interaction_id} (status={interaction.status})", flush=True)
+
+    try:
+        while interaction.status in ("in_progress", "queued"):
+            time.sleep(5)
+            interaction = client.interactions.get(id=interaction_id)
+            elapsed = int(time.monotonic() - start_ts)
+            n_steps = len(getattr(interaction, "steps", None) or [])
+            print(f"[+{elapsed}s] status={interaction.status} steps={n_steps}", flush=True)
+            if elapsed > 420:
+                raise TimeoutError(f"Interaction {interaction_id} exceeded 420s")
+
+        if interaction.status != "completed":
+            err_detail = getattr(interaction, "error", None)
+            raise RuntimeError(f"Interaction ended with status={interaction.status}, error={err_detail}")
+
+        usage = getattr(interaction, "usage", None)
+        if usage is not None:
+            print(f"Completed in {int(time.monotonic() - start_ts)}s | usage={usage}", flush=True)
+
+        if not interaction.output_text:
+            raise RuntimeError("Interaction completed with empty output_text")
+        return interaction.output_text
+    finally:
         try:
-            interaction = client.interactions.create(
-                model=model,
-                input=prompt,
-                store=False,
-                tools=[{"type": "google_search"}, {"type": "url_context"}],
-                response_format={
-                    "type": "text",
-                    "mime_type": "application/json",
-                    "schema": schema,
-                },
-            )
-            if interaction.output_text:
-                return interaction.output_text
-            raise RuntimeError(f"Empty output_text (status={interaction.status})")
-        except Exception as exc:
-            last_err = exc
-            if attempt < 3:
-                wait_sec = 8 * attempt
-                print(f"[Attempt {attempt}/3 failed: {exc}] Retrying in {wait_sec}s...", file=sys.stderr)
-                time.sleep(wait_sec)
-    assert last_err is not None
-    raise last_err
+            client.interactions.delete(id=interaction_id)
+        except Exception:
+            pass
 
 
 def main() -> int:
@@ -340,7 +357,7 @@ def main() -> int:
 
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key:
-        print("ERROR: GEMINI_API_KEY environment variable is not set.", file=sys.stderr)
+        print("ERROR: GEMINI_API_KEY environment variable is not set.", file=sys.stderr, flush=True)
         return 1
 
     now_sgt = datetime.now(SGT)
@@ -348,8 +365,8 @@ def main() -> int:
     if edition == "auto":
         edition = "morning" if now_sgt.hour < 14 else "evening"
 
-    model = os.environ.get("GEMINI_MODEL", "gemini-4-argon").strip() or "gemini-4-argon"
-    print(f"Generating {edition} brief at {now_sgt.isoformat()} using model '{model}'...")
+    model = os.environ.get("GEMINI_MODEL", "gemini-4-hydrogen").strip() or "gemini-4-hydrogen"
+    print(f"Generating {edition} brief at {now_sgt.isoformat()} using model '{model}'...", flush=True)
 
     memory_md = MEMORY_LOG_PATH.read_text(encoding="utf-8")
     template_path = TEMPLATE_DIR / f"{edition}-template.html"
@@ -359,7 +376,7 @@ def main() -> int:
     schema_cls = MorningBriefPayload if edition == "morning" else EveningBriefPayload
 
     client = genai.Client(api_key=api_key)
-    raw_json = call_gemini_with_retry(client, model, prompt, schema_cls.model_json_schema())
+    raw_json = run_background_interaction(client, model, prompt, schema_cls.model_json_schema())
 
     url_cache: dict[str, str] = {}
     if edition == "morning":
@@ -384,9 +401,9 @@ def main() -> int:
         new_memory = replace_redirect_urls(new_memory, url_cache)
         MEMORY_LOG_PATH.write_text(new_memory + "\n", encoding="utf-8")
     else:
-        print("WARNING: updated_memory_log_markdown did not start with '#', keeping existing header.", file=sys.stderr)
+        print("WARNING: updated_memory_log_markdown did not start with '#', keeping existing header.", file=sys.stderr, flush=True)
 
-    print(f"Successfully updated {target_html_path.name}, index.html, and memory/memory-log.md.")
+    print(f"Successfully updated {target_html_path.name}, index.html, and memory/memory-log.md.", flush=True)
     return 0
 
 

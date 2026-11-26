@@ -6,9 +6,9 @@
 <title>{{TITLE}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-/* Utilitarian · News Brief | Compact weather strip | Open-canvas hairlines | Plus Jakarta Sans + Noto Sans SC + JetBrains Mono | Crisp White #FFFFFF + Cobalt #1E3A8A | 0px radius */
+/* Utilitarian · News Brief | Morning Edition | Compact weather strip | Open-canvas hairlines | 0px radius */
 :root {
   --paper: #FFFFFF;
   --ink: #0F172A;
@@ -35,9 +35,60 @@ body {
 }
 
 .page {
-  padding: 56px clamp(24px, 9vw, 112px) 84px;
+  padding: 44px clamp(24px, 9vw, 112px) 84px;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.edition-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--hair);
+  flex-wrap: wrap;
+}
+
+.edition-brand {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.edition-switch {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+}
+
+.edition-tab {
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border-right: 1px solid var(--ink);
+}
+
+.edition-tab:last-child {
+  border-right: none;
+}
+
+.edition-tab:hover {
+  background: #F1F5F9;
+  color: var(--ink);
+}
+
+.edition-tab.active {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
 }
 
 .hero {
@@ -119,6 +170,14 @@ h2 {
   color: var(--ink);
 }
 
+.sec-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  color: var(--mute);
+}
+
 p {
   margin: 0 0 16px;
   max-width: 68ch;
@@ -174,15 +233,21 @@ th {
   font-weight: 500;
   color: var(--mute);
   border-bottom: 1.5px solid var(--ink);
-  padding: 10px 10px 10px 0;
+  padding: 10px 12px 10px 0;
   white-space: nowrap;
 }
 
 td {
   border-bottom: 1px solid var(--hair);
-  padding: 10px 10px 10px 0;
+  padding: 10px 12px 10px 0;
   color: var(--ink2);
   white-space: nowrap;
+  vertical-align: top;
+}
+
+td.note {
+  white-space: normal;
+  min-width: 220px;
 }
 
 td.num, th.num {
@@ -221,6 +286,14 @@ tr.totals td {
 </head>
 <body>
 <main class="page">
+  <nav class="edition-bar" aria-label="简报版本切换">
+    <div class="edition-brand">SINGAPORE &amp; SPECIAL TOPICS DAILY BRIEF</div>
+    <div class="edition-switch">
+      <a href="morning.html" class="edition-tab active" aria-current="page">早间简报 · 08:00</a>
+      <a href="evening.html" class="edition-tab">晚间简报 · 20:00</a>
+    </div>
+  </nav>
+
   <header class="hero">
     <h1>{{TITLE}}</h1>
     <p class="deck">{{TIME_WINDOW}}</p>
@@ -280,15 +353,30 @@ tr.totals td {
   <section class="sec">
     <div class="sec-split" style="margin-bottom: 20px;">
       <div class="col-left">
-        <h2>{{SPECIAL_SECTION_TITLE}}</h2>
+        <h2>小嶋阳菜与 Her lip to 动态及舆论追踪</h2>
+        <span class="sec-badge">早报专属 · 每日更新</span>
       </div>
       <div class="col-right">
         <ul>
-          {{SPECIAL_SECTION_ITEMS}}
+          {{HLT_ITEMS}}
         </ul>
       </div>
     </div>
-    {{SPECIAL_EXTRA_HTML}}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>渠道 / 单品维度</th>
+            <th class="num">关键数据 / 评价数</th>
+            <th>近期动态与消费者真实风评摘要</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{HLT_TABLE_ROWS}}
+        </tbody>
+      </table>
+      <div class="table-caption">{{HLT_TABLE_CAPTION}}</div>
+    </div>
   </section>
 
   <section class="sec">

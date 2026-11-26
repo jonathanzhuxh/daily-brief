@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新加坡晚间新闻与专题简报 · 2026年11月25日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Utilitarian · News Brief | Evening Edition | Compact weather strip | Open-canvas hairlines | 0px radius */
+:root {
+  --paper: #FFFFFF;
+  --ink: #0F172A;
+  --ink2: #334155;
+  --mute: #475569;
+  --hair: #CBD5E1;
+  --accent: #1D4ED8;
+  --accent-text: #1E3A8A;
+  --accent-2: #0F766E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  padding: 44px clamp(24px, 9vw, 112px) 84px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.edition-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--hair);
+  flex-wrap: wrap;
+}
+
+.edition-brand {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.edition-switch {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+}
+
+.edition-tab {
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border-right: 1px solid var(--ink);
+}
+
+.edition-tab:last-child {
+  border-right: none;
+}
+
+.edition-tab:hover {
+  background: #F1F5F9;
+  color: var(--ink);
+}
+
+.edition-tab.active {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+}
+
+.hero {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 32px;
+  margin-bottom: 52px;
+}
+
+h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 0 0 12px;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.deck {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--mute);
+  margin: 0 0 24px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+}
+
+.weather-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  border-top: 1px solid var(--hair);
+  padding-top: 18px;
+}
+
+.metric-label {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  color: var(--mute);
+  margin-bottom: 4px;
+}
+
+.metric-val {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--accent-text);
+  white-space: nowrap;
+}
+
+.sec {
+  margin-bottom: 56px;
+  padding-top: 26px;
+  border-top: 1px solid var(--hair);
+}
+
+.sec-split {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.col-left {
+  grid-column: 1 / 5;
+}
+
+.col-right {
+  grid-column: 5 / 13;
+}
+
+.col-full {
+  grid-column: 1 / 13;
+}
+
+h2 {
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+}
+
+.sec-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+.matchup-banner {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-text);
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent-text);
+  background: #F8FAFC;
+  margin-bottom: 18px;
+}
+
+p {
+  margin: 0 0 16px;
+  max-width: 68ch;
+  color: var(--ink2);
+}
+
+ul, ol {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  max-width: 68ch;
+  color: var(--ink2);
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+li strong {
+  color: var(--ink);
+}
+
+a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+.tag-unverified {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  color: #9A3412;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mute);
+  border-bottom: 1.5px solid var(--ink);
+  padding: 10px 12px 10px 0;
+  white-space: nowrap;
+}
+
+td {
+  border-bottom: 1px solid var(--hair);
+  padding: 10px 12px 10px 0;
+  color: var(--ink2);
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+td.note {
+  white-space: normal;
+  min-width: 180px;
+}
+
+td.num, th.num {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+tr.totals td {
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.table-caption {
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 8px;
+}
+
+.sources-list {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 78ch;
+}
+
+@media (max-width: 860px) {
+  .weather-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .col-left, .col-right {
+    grid-column: 1 / 13;
+  }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <nav class="edition-bar" aria-label="简报版本切换">
+    <div class="edition-brand">SINGAPORE &amp; SPECIAL TOPICS DAILY BRIEF</div>
+    <div class="edition-switch">
+      <a href="morning.html" class="edition-tab">早间简报 · 08:00</a>
+      <a href="evening.html" class="edition-tab active" aria-current="page">晚间简报 · 20:00</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>新加坡晚间新闻与专题简报 · 2026年11月25日</h1>
+    <p class="deck">信息窗口：2026年11月25日 08:00 – 20:00 SGT · 生成时间：20:01 SGT（今晚 20:00 SGT 将自动更新最新一期）</p>
+    <div class="weather-strip">
+      <div>
+        <div class="metric-label">天气状况（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a>）</div>
+        <div class="metric-val">局部阵雨</div>
+      </div>
+      <div>
+        <div class="metric-label">气温</div>
+        <div class="metric-val">24.0 – 32.0 °C</div>
+      </div>
+      <div>
+        <div class="metric-label">24小时 PSI</div>
+        <div class="metric-val">30 – 50</div>
+      </div>
+      <div>
+        <div class="metric-label">1小时 PM2.5</div>
+        <div class="metric-val">5 – 12 µg/m³</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>新加坡本地新闻与政治动向</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>【社区·榜鹅】榜鹅中第 160A 座组屋频现高空抛脏尿布事件：</strong>榜鹅中（Punggol Central）第 160A 座组屋近半年频繁发生高空抛掷脏尿布事件，引发居民卫生与安全投诉，相关部门已介入调查执法。</li>
+        <li><strong>公务员获发 1.55 个月年终花红，低薪职级获额外定额补助：</strong>公共服务署宣布公务员获发 1.55 个月年终常年可变花红（全年累计共 2 个月）；MX13(I)–MX14 职级额外获发 S$300，MX15–MX16 及勤务员制度（OSS）职级额外获发 S$600。</li>
+        <li><strong>大法官梅达顺就新加坡法治 200 周年发表专题演讲：</strong>大法官梅达顺在新加坡法治 200 周年纪念讲演中系统阐释司法审查原则与行政授权的宪制边界。</li>
+        <li><strong>30 岁客工承认利用 Gemini 伪造班丹蓄水池鳄鱼照片引发搜查：</strong>被告 Ye Lin 因使用 AI 伪造班丹蓄水池出现鳄鱼的照片导致当局出动搜查，于庭上认罪，案件定于 12 月 1 日判刑。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>重大工程与武装部队动态</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>【海军】新日同意将 Exercise Singapan 双边海军演习常态化：</strong>国防部长陈振声访日会晤后，新加坡与日本同意将双边海军演习 Exercise Singapan 常态化，并探讨开展潜艇救援联合演训合作。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>SpaceX 与 Starship 技术动态</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>Falcon 9 成功执行 USSF-266 发射任务，B1081 完成第 29 飞：</strong>范登堡太空军基地 SLC-4E 发射的 USSF-266 任务顺利入轨，一级助推器 B1081 完成第 29 次飞行并成功降落无人回收船；后续排期聚焦 11 月 28 日 USSF-380 与 11 月 29 日 Cygnus NG-25。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-split" style="margin-bottom: 20px;">
+      <div class="col-left">
+        <h2>金州勇士队最新动态与技战术复盘</h2>
+        <span class="sec-badge">晚报专属 · NBA 追踪</span>
+      </div>
+      <div class="col-right">
+        <div class="matchup-banner">赛前前瞻基线：GSW（9–8）主场迎战 SAC（2–15）· 今晚 20:00 SGT 晚报将更新完整赛果与球员 Box Score</div>
+        <ul>
+          <li><strong>主力伤病与出战观察：</strong>库里（腹斜肌撕裂 oblique tear）、巴特勒、波尔津吉斯及穆迪继续缺阵；伦德伯格因生病（Illness）与左腿筋拉伤恢复中的后卫 Brandon Williams 同列每日观察（Day-To-Day）。</li>
+          <li><strong>上仗复盘与技战术看点：</strong>此前勇士主场 88–87 险胜凯尔特人终结五连败并延续主场七连胜（伦德伯格贡献 12 分 8 篮板 3 助攻）；对阵国王重点考验残阵外线三分投射稳定性与后场篮板保护。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>球员（上仗对阵 BOS 关键轮换 / 伤病基线）</th>
+            <th class="num">MIN</th>
+            <th class="num">PTS</th>
+            <th class="num">REB</th>
+            <th class="num">AST</th>
+            <th class="num">FG</th>
+            <th class="num">3PT</th>
+            <th class="num">+/-</th>
+            <th>场上表现与状态备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>伦德伯格（Iffe Lundberg）</td>
+            <td class="num">—</td>
+            <td class="num">12</td>
+            <td class="num">8</td>
+            <td class="num">3</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="note">上仗险胜凯尔特人关键轮换；迎战国王赛前因生病列 Day-To-Day</td>
+          </tr>
+          <tr>
+            <td>斯蒂芬·库里（Stephen Curry）</td>
+            <td class="num">DNP</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="note">腹斜肌撕裂（Oblique tear）持续缺阵</td>
+          </tr>
+          <tr>
+            <td>布兰登·威廉姆斯（Brandon Williams）</td>
+            <td class="num">DNP</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="note">左腿筋拉伤恢复中，列 Day-To-Day 有望复出</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-caption">数据整理自 2026年11月25日 晚报记忆基线；2026年11月26日 20:00 SGT 晚报将自动替换为最新比赛完整 Box Score。</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Sources</h2>
+    <ol class="sources-list">
+      <li>Daily Brief Memory Log — <a href="https://github.com/jonathanzhuxh/daily-brief/blob/main/memory/memory-log.md" target="_blank" rel="noopener noreferrer">2026-11-25 晚报窗口归档基线</a></li>
+    </ol>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新加坡早间新闻与专题简报 · 2026年11月26日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Utilitarian · News Brief | Morning Edition | Compact weather strip | Open-canvas hairlines | 0px radius */
+:root {
+  --paper: #FFFFFF;
+  --ink: #0F172A;
+  --ink2: #334155;
+  --mute: #475569;
+  --hair: #CBD5E1;
+  --accent: #1D4ED8;
+  --accent-text: #1E3A8A;
+  --accent-2: #0F766E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  padding: 44px clamp(24px, 9vw, 112px) 84px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.edition-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--hair);
+  flex-wrap: wrap;
+}
+
+.edition-brand {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.edition-switch {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+}
+
+.edition-tab {
+  padding: 6px 14px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border-right: 1px solid var(--ink);
+}
+
+.edition-tab:last-child {
+  border-right: none;
+}
+
+.edition-tab:hover {
+  background: #F1F5F9;
+  color: var(--ink);
+}
+
+.edition-tab.active {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+}
+
+.hero {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 32px;
+  margin-bottom: 52px;
+}
+
+h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 0 0 12px;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.deck {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--mute);
+  margin: 0 0 24px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+}
+
+.weather-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  border-top: 1px solid var(--hair);
+  padding-top: 18px;
+}
+
+.metric-label {
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  color: var(--mute);
+  margin-bottom: 4px;
+}
+
+.metric-val {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--accent-text);
+  white-space: nowrap;
+}
+
+.sec {
+  margin-bottom: 56px;
+  padding-top: 26px;
+  border-top: 1px solid var(--hair);
+}
+
+.sec-split {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.col-left {
+  grid-column: 1 / 5;
+}
+
+.col-right {
+  grid-column: 5 / 13;
+}
+
+.col-full {
+  grid-column: 1 / 13;
+}
+
+h2 {
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+}
+
+.sec-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+p {
+  margin: 0 0 16px;
+  max-width: 68ch;
+  color: var(--ink2);
+}
+
+ul, ol {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  max-width: 68ch;
+  color: var(--ink2);
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+li strong {
+  color: var(--ink);
+}
+
+a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+.tag-unverified {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  color: #9A3412;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mute);
+  border-bottom: 1.5px solid var(--ink);
+  padding: 10px 12px 10px 0;
+  white-space: nowrap;
+}
+
+td {
+  border-bottom: 1px solid var(--hair);
+  padding: 10px 12px 10px 0;
+  color: var(--ink2);
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+td.note {
+  white-space: normal;
+  min-width: 220px;
+}
+
+td.num, th.num {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+tr.totals td {
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.table-caption {
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 8px;
+}
+
+.sources-list {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 78ch;
+}
+
+@media (max-width: 860px) {
+  .weather-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .col-left, .col-right {
+    grid-column: 1 / 13;
+  }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <nav class="edition-bar" aria-label="简报版本切换">
+    <div class="edition-brand">SINGAPORE &amp; SPECIAL TOPICS DAILY BRIEF</div>
+    <div class="edition-switch">
+      <a href="morning.html" class="edition-tab active" aria-current="page">早间简报 · 08:00</a>
+      <a href="evening.html" class="edition-tab">晚间简报 · 20:00</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>新加坡早间新闻与专题简报 · 2026年11月26日</h1>
+    <p class="deck">信息窗口：2026年11月25日 20:00 – 11月26日 10:30 SGT · 生成时间：10:30 SGT</p>
+    <div class="weather-strip">
+      <div>
+        <div class="metric-label">天气状况（<a href="https://www.nea.gov.sg/" target="_blank" rel="noopener noreferrer">NEA</a>）</div>
+        <div class="metric-val">午后雷阵雨</div>
+      </div>
+      <div>
+        <div class="metric-label">气温</div>
+        <div class="metric-val">23.0 – 32.0 °C</div>
+      </div>
+      <div>
+        <div class="metric-label">24小时 PSI</div>
+        <div class="metric-val">28 – 52</div>
+      </div>
+      <div>
+        <div class="metric-label">1小时 PM2.5</div>
+        <div class="metric-val">3 – 15 µg/m³</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>新加坡本地新闻与政治动向</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>公用事业局（PUB）发布 11 月 26–28 日高潮位叠加季风强降雨积水风险提示：</strong>受东北季风天气影响，PUB 提醒 11 月 26 日至 28 日每日上午 10:30 至下午 1:00 将出现约 3.3 米天文大潮，若与午后强雷阵雨时段重叠，沿海及部分低洼地段可能出现短暂积水。（<a href="https://www.pub.gov.sg/Resources/News-Room/PressReleases/2026/11/Northeast-monsoon-Increased-flood-risks-during-high-tide-events" target="_blank" rel="noopener noreferrer">PUB</a>）</li>
+        <li><strong>樟宜机场 T3 辅警疏忽触发防恐路障致巴士撞车被判监：</strong>前辅警 Azfar Mustaqim Jasman 因在控制面板上歇手，意外触发防恐车辆路障（ATVB），导致一辆巴士撞上路障并造成 22 人受伤（含巴士车长鼻骨骨折），路障维修费逾 5.5 万新元，涉事巴士报废（损失逾 23.6 万新元），被判处监禁。（<a href="https://www.straitstimes.com/singapore/courts-crime/jail-for-auxiliary-cop-who-caused-bus-to-collide-into-barrier-at-changi-airport-t3-injuring-22?ai-allowed=1" target="_blank" rel="noopener noreferrer">The Straits Times</a>，<a href="https://www.channelnewsasia.com/singapore/auxiliary-police-officer-jailed-barrier-changi-airport-6580521" target="_blank" rel="noopener noreferrer">CNA</a>）</li>
+        <li><strong>大士关卡联合执法查获 13 名无照及无保险摩托车骑士：</strong>新加坡警察部队（SPF）、国家环境局（NEA）与陆路交通管理局（LTA）在大士关卡联合拦检逾 220 辆摩托车，查获 13 名无有效驾照及保险的骑士；NEA 就尾气排放与噪音问题开出 84 张传票，LTA 查获 77 项违规（含车牌不合规、未缴路税及非法改装排气管）。（<a href="https://www.straitstimes.com/singapore/13-unlicensed-uninsured-motorcyclists-caught-after-checks-at-tuas-checkpoint?ai-allowed=1" target="_blank" rel="noopener noreferrer">The Straits Times</a>）</li>
+        <li><strong>滨海艺术中心举行“心跳演习”（Exercise Heartbeat）反恐演练：</strong>11 月 25 日在滨海艺术中心户外剧场附近举行的反恐演习模拟了无人机袭击、持枪挟持人质及二次爆炸等复合威胁，律政部长兼内政部第二部长唐振辉到场观摩。（<a href="https://www.channelnewsasia.com/singapore/counterterrorism-exercise-heartbeat-police-esplanade-6578731" target="_blank" rel="noopener noreferrer">CNA</a>）</li>
+        <li><strong>兀兰/马西岭兴都庙举办少数族群乐龄活跃老化与物资派发活动：</strong>由 Project Smile 与“好人好事”（Hao Ren Hao Shi）在马西岭 Sri Siva Krishna Temple 联合举办，回应代部长扎吉哈（Zaqy Mohamad）推动少数族群乐龄参与的倡议；该项目计划于 2027 年从目前的 4 个站点扩展至 7 个。（<a href="https://www.straitstimes.com/singapore/health/tailored-active-ageing-programme-grocery-distribution-at-hindu-temple-draw-minority-seniors?ai-allowed=1" target="_blank" rel="noopener noreferrer">The Straits Times</a>）</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>重大工程与武装部队动态</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>暂无新增动态：</strong>2026年11月25日 20:00 至 11月26日 10:30 SGT 期间，新加坡本地地铁（MRT/LRT）、南北交通廊道（NSC）、巴士车队、巴耶利峇空军基地（PLAB）、长岛计划、南部濒水区、大士港及新加坡武装部队（SAF）装备采购暂无新增官方发布。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-split">
+    <div class="col-left">
+      <h2>SpaceX 与 Starship 技术动态</h2>
+    </div>
+    <div class="col-right">
+      <ul>
+        <li><strong>FCC 批准 SpaceX 部署 100 万颗“Starmind”轨道 AI 数据中心卫星：</strong>美国联邦通信委员会（FCC）于 11 月 25 日宣布有条件批准 SpaceX 部署多达 100 万颗 Starmind 轨道 AI 计算卫星，SpaceX 计划自 2027 年第三季度起依托完全可重复使用的 Starship 重型运力发射首批卫星，FCC 主席 Brendan Carr 称此举为美国轨道计算基础设施开辟了新前沿。（<a href="https://www.space.com/space-exploration/launches-spacecraft/green-light-for-starmind-spacex-gets-approval-to-deploy-1-million-ai-satellites" target="_blank" rel="noopener noreferrer">Space.com</a>）</li>
+        <li><strong>Starbase 海滩与公路封锁生效在即，推进新一代 Starship 测试准备：</strong>德州 Starbase 市公布自当地时间 11 月 25 日 23:59（新加坡时间 11 月 26 日 13:59）起对 Boca Chica 海滩及 4 号州际公路实施临时封锁；此前拟用于 Flight 17 的 Block 3 构型箭体（搭载 Raptor 3 架构）Booster 24 与 Ship 44 在完成 Massey's 测试场液氮低温压力验证后已沿 Massey Way 完成首次双箭同步转运（Double Roll），正配合 12 月发射窗口与佛州 LC-39A 验收节奏推进后续地面测试。<span class="tag-unverified">[未经证实，仅供参考]</span>（<a href="https://www.starbaseevents.com/news" target="_blank" rel="noopener noreferrer">Starbase Events</a>，<a href="https://www.basenor.com/blogs/news/starship-flight-17-pad-39a-debut-and-what-comes-next" target="_blank" rel="noopener noreferrer">BASENOR</a>）</li>
+        <li><strong>SpaceX 放弃约 7.38 亿美元美国联邦宽带补贴（BEAD）：</strong>美国国家电信和信息管理局（NTIA）于 11 月 25 日表示，SpaceX 已退出原获批的约 7.38 亿美元 BEAD 联邦宽带补助资金，但仍承诺在零补贴情况下为原中标乡村地区提供 Starlink 服务（须满足下行 100 Mbps / 上行 20 Mbps 速率要求并免除新用户终端硬件费，同时免除了各州财务审计与违约罚款条款）。（<a href="https://www.teslarati.com/spacex-starlink-rejects-fed-subsidy/" target="_blank" rel="noopener noreferrer">Teslarati</a>）</li>
+        <li><strong>EnduroSat 预订两发 New Glenn 专用发射以应对 Falcon 9 拼车退场：</strong>卫星制造商 EnduroSat 于 11 月 25 日宣布与 Blue Origin 签署多发发射协议，预订自 2029 年起的两发 New Glenn（7×2 构型）专用发射任务，在 SpaceX 逐步推进 Falcon 9 退役及拼车服务（Rideshare）收尾之际提前锁定重型运力。（<a href="https://aviationweek.com/space/launch-vehicles-propulsion/endurosat-reserves-two-new-glenn-rockets-future-customers" target="_blank" rel="noopener noreferrer">Aviation Week</a>，<a href="https://markets.businessinsider.com/news/stocks/endurosat-signs-multi-launch-agreement-with-blue-origin-for-dedicated-new-glenn-missions-for-its-customers-1036799281" target="_blank" rel="noopener noreferrer">Business Insider</a>）</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-split" style="margin-bottom: 20px;">
+      <div class="col-left">
+        <h2>小嶋阳菜与 Her lip to 动态及舆论追踪</h2>
+        <span class="sec-badge">早报专属 · 每日更新</span>
+      </div>
+      <div class="col-right">
+        <ul>
+          <li><strong>官方与假日季系列动态：</strong>本窗口期内小嶋阳菜个人账号暂无重大突发公告；品牌正围绕 11 月 28 日即将于东京表参道「House of Herme」启幕的「HER LIP TO HOLIDAY 2026」先行发售会及副线 ROSIER 新发布的「NUDE PEARL」香氛内衣手洗液持续预热。（<a href="https://prtimes.jp/main/html/rd/p/000000198.000074953.html" target="_blank" rel="noopener noreferrer">PR TIMES</a>）</li>
+          <li><strong>行业研报回顾 Her lip to 资本并购路径：</strong>Beyondge 于 11 月 25 日发布的《Beyondge M&amp;A Industry Report Vol.2》聚焦服饰 D2C 行业并购案例，提及 yutori 于 2024 年先行收购 Her lip to 运营方 heart relation 51% 股权，随后通过二次交割完成剩余股权承接的整合路径。（<a href="https://prtimes.jp/main/html/rd/p/000000006.000192050.html" target="_blank" rel="noopener noreferrer">PR TIMES</a>）</li>
+          <li><strong>日本美妆单品口碑与渠道反馈深挖：</strong><a href="https://www.cosme.net/brands/124553/review/" target="_blank" rel="noopener noreferrer">@cosme</a> 上 Her lip to BEAUTY 累计评论达 679 条（40 代群体占 <a href="https://www.cosme.net/brands/124553/review/agg-40/agl-49/" target="_blank" rel="noopener noreferrer">89 条</a>）。从单品真实评价看，精华唇蜜「LIP TO LOVE SERUM」因水光成膜自然、百搭且不易拔干获高频好评，但多名用户指出软管管身偏硬、挤压费力；身体乳「SENSUAL RICH BODY CREAM」与标志性「NUDE PEARL」香调在香气高级感上评价稳固；<a href="https://review.rakuten.co.jp/review/review/rd/0_423937_423937_0/" target="_blank" rel="noopener noreferrer">乐天官方店</a>（322 条评价）部分买家则反映无优惠券或积分活动时到手价偏高。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>渠道 / 单品维度</th>
+            <th class="num">关键数据 / 评价数</th>
+            <th>近期动态与消费者真实风评摘要</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.cosme.net/brands/124553/review/" target="_blank" rel="noopener noreferrer">@cosme（Her lip to BEAUTY 全站）</a></td>
+            <td class="num">679</td>
+            <td class="note">较 11 月 23 日（669 条）新增 10 条；唇部精华光泽度与香氛线口碑突出，软管按压手感存改进建议</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.cosme.net/brands/124553/review/agg-40/agl-49/" target="_blank" rel="noopener noreferrer">@cosme（40 代用户群体）</a></td>
+            <td class="num">89</td>
+            <td class="note">成熟消费群体关注度稳定，评价占比约 13.1%</td>
+          </tr>
+          <tr>
+            <td><a href="https://review.rakuten.co.jp/review/review/rd/0_423937_423937_0/" target="_blank" rel="noopener noreferrer">乐天官方店铺（Her lip to BEAUTY）</a></td>
+            <td class="num">322</td>
+            <td class="note">部分买家反映无优惠券或积分返还时价格较其他渠道偏高</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-caption">数据截至 2026年11月24日–26日各平台公开页面。</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Sources</h2>
+    <ol class="sources-list">
+      <li>Meteorological Service Singapore (MSS) — <a href="https://www.weather.gov.sg/weather-forecast-24hrforecast/" target="_blank" rel="noopener noreferrer">24-Hour Weather Forecast (26 Nov 2026)</a></li>
+      <li>Haze.sg — <a href="https://www.haze.sg/" target="_blank" rel="noopener noreferrer">Singapore Air Quality PSI &amp; PM2.5 Readings (26 Nov 2026)</a></li>
+      <li>PUB — <a href="https://www.pub.gov.sg/Resources/News-Room/PressReleases/2026/11/Northeast-monsoon-Increased-flood-risks-during-high-tide-events" target="_blank" rel="noopener noreferrer">Northeast Monsoon: Increased Flood Risks During High Tide Events (26–28 Nov 2026)</a></li>
+      <li>The Straits Times — <a href="https://www.straitstimes.com/singapore/courts-crime/jail-for-auxiliary-cop-who-caused-bus-to-collide-into-barrier-at-changi-airport-t3-injuring-22?ai-allowed=1" target="_blank" rel="noopener noreferrer">Jail for auxiliary cop who caused bus to collide into barrier at Changi Airport T3, injuring 22</a></li>
+      <li>CNA — <a href="https://www.channelnewsasia.com/singapore/auxiliary-police-officer-jailed-barrier-changi-airport-6580521" target="_blank" rel="noopener noreferrer">Auxiliary police officer jailed for causing bus crash at Changi Airport barrier</a></li>
+      <li>The Straits Times — <a href="https://www.straitstimes.com/singapore/13-unlicensed-uninsured-motorcyclists-caught-after-checks-at-tuas-checkpoint?ai-allowed=1" target="_blank" rel="noopener noreferrer">13 unlicensed, uninsured motorcyclists caught after checks at Tuas Checkpoint</a></li>
+      <li>CNA — <a href="https://www.channelnewsasia.com/singapore/counterterrorism-exercise-heartbeat-police-esplanade-6578731" target="_blank" rel="noopener noreferrer">Counterterrorism Exercise Heartbeat held at Esplanade</a></li>
+      <li>The Straits Times — <a href="https://www.straitstimes.com/singapore/health/tailored-active-ageing-programme-grocery-distribution-at-hindu-temple-draw-minority-seniors?ai-allowed=1" target="_blank" rel="noopener noreferrer">Tailored active ageing programme, grocery distribution at Hindu temple draw minority seniors</a></li>
+      <li>Space.com — <a href="https://www.space.com/space-exploration/launches-spacecraft/green-light-for-starmind-spacex-gets-approval-to-deploy-1-million-ai-satellites" target="_blank" rel="noopener noreferrer">Green light for Starmind: SpaceX gets approval to deploy 1 million AI satellites</a></li>
+      <li>Starbase Events — <a href="https://www.starbaseevents.com/news" target="_blank" rel="noopener noreferrer">SpaceX and Starbase News &amp; Road Closures</a></li>
+      <li>BASENOR — <a href="https://www.basenor.com/blogs/news/starship-flight-17-pad-39a-debut-and-what-comes-next" target="_blank" rel="noopener noreferrer">Starship Flight 17: Booster 24 &amp; Ship 44 Double Roll, Pad 39A Debut and What Comes Next</a></li>
+      <li>Teslarati — <a href="https://www.teslarati.com/spacex-starlink-rejects-fed-subsidy/" target="_blank" rel="noopener noreferrer">SpaceX rejects $738M fed subsidy, betting on Starlink alone</a></li>
+      <li>Aviation Week — <a href="https://aviationweek.com/space/launch-vehicles-propulsion/endurosat-reserves-two-new-glenn-rockets-future-customers" target="_blank" rel="noopener noreferrer">EnduroSat Reserves Two New Glenn Rockets For Future Customers</a></li>
+      <li>Business Insider — <a href="https://markets.businessinsider.com/news/stocks/endurosat-signs-multi-launch-agreement-with-blue-origin-for-dedicated-new-glenn-missions-for-its-customers-1036799281" target="_blank" rel="noopener noreferrer">EnduroSat Signs Multi-Launch Agreement with Blue Origin for Dedicated New Glenn Missions</a></li>
+      <li>PR TIMES — <a href="https://prtimes.jp/main/html/rd/p/000000198.000074953.html" target="_blank" rel="noopener noreferrer">ROSIER by Her lip to「NUDE PEARL」ランジェリーウォッシュ発表</a></li>
+      <li>PR TIMES — <a href="https://prtimes.jp/main/html/rd/p/000000006.000192050.html" target="_blank" rel="noopener noreferrer">Beyondge M&amp;A Industry Report Vol.2</a></li>
+      <li>@cosme — <a href="https://www.cosme.net/brands/124553/review/" target="_blank" rel="noopener noreferrer">Her lip to BEAUTY 口碑评价汇总</a> / <a href="https://www.cosme.net/brands/124553/review/agg-40/agl-49/" target="_blank" rel="noopener noreferrer">40代用户评价</a></li>
+      <li>Rakuten — <a href="https://review.rakuten.co.jp/review/review/rd/0_423937_423937_0/" target="_blank" rel="noopener noreferrer">Her lip to BEAUTY 乐天官方店铺评价</a></li>
+    </ol>
+  </section>
+</main>
+</body>
+</html>
